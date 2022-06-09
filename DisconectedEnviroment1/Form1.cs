@@ -73,6 +73,11 @@ namespace DisconectedEnviroment1
             if ((ctr >= 1) && (ctr <9))
             {
                 ctr = ctr + 1;
+                txtCode.Text = "C00" + ctr;
+            }
+            else if ((ctr >= 99) && (ctr < 99))
+            {
+                ctr = ctr + 1;
                 txtCode.Text = "C0" + ctr;
             }
             else if (ctr >= 99)
