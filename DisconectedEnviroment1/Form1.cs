@@ -78,7 +78,9 @@ namespace DisconectedEnviroment1
             else if (ctr >= 99)
             {
                 ctr = ctr + 1;
+                txtCode.Text = "C" + ctr;
             }
+            cmdAdd.Enabled = false;
 
         }
     }
