@@ -26,10 +26,6 @@ namespace DisconectedEnviroment1
         {
             // TODO: This line of code loads data into the 'hRDataSet.empdetails' table. You can move, or remove it, as needed.
             this.empdetailsTableAdapter.Fill(this.hRDataSet.empdetails);
-            //This line of code loads data into the
-            //hRDataSet.empdetail table. This would appear in
-            //Form1 Load event
-            this.empdetailsTableAdapter.Fill(this.hRDataSet.empdetails);
             txtCode.Enabled = false;
             txtName.Enabled = false;
             txtAddress.Enabled = false;
@@ -63,10 +59,10 @@ namespace DisconectedEnviroment1
             cbDepartment.Text = "";
             int ctr, len;
             string codeval;
-            dt = hRDataSet.Tables["empdtails"];
+            dt = hRDataSet.Tables["empdetails"];
             len = dt.Rows.Count - 1;
             dr = dt.Rows[len];
-            code = dr["cccode"].ToString();
+            code = dr["ccode"].ToString();
             codeval = code.Substring(1, 3);
             ctr = Convert.ToInt32(codeval);
 
