@@ -263,6 +263,7 @@ namespace DisconectedEnviroment1
             this.cmdDelete.TabIndex = 13;
             this.cmdDelete.Text = "Delete";
             this.cmdDelete.UseVisualStyleBackColor = false;
+            this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
             // 
             // cmdSave
             // 

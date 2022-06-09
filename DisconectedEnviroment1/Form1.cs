@@ -108,5 +108,14 @@ namespace DisconectedEnviroment1
             cmdAdd.Enabled = true;
             cmdSave.Enabled = false;
         }
+
+        private void cmdDelete_Click(object sender, EventArgs e)
+        {
+            string code;
+            code = txtCode.Text;
+            dr = hRDataSet.Tables["empdetails"].Rows.Find(code);
+            dr.Delete();
+            empdetailsTableAdapter.Update(hRDataSet);
+        }
     }
 }
