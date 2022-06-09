@@ -61,9 +61,14 @@ namespace DisconectedEnviroment1
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.hRDataSet = new DisconectedEnviroment1.HRDataSet();
+            this.empdetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empdetailsTableAdapter = new DisconectedEnviroment1.HRDataSetTableAdapters.empdetailsTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hRDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empdetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -90,8 +95,8 @@ namespace DisconectedEnviroment1
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
@@ -113,6 +118,7 @@ namespace DisconectedEnviroment1
             // 
             // cbDepartment
             // 
+            this.cbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource, "cDepartment", true));
             this.cbDepartment.FormattingEnabled = true;
             this.cbDepartment.Location = new System.Drawing.Point(191, 248);
             this.cbDepartment.Margin = new System.Windows.Forms.Padding(3, 7, 3, 2);
@@ -124,7 +130,7 @@ namespace DisconectedEnviroment1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 46);
+            this.label2.Location = new System.Drawing.Point(6, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 20);
@@ -145,6 +151,7 @@ namespace DisconectedEnviroment1
             // txtState
             // 
             this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource, "cstate", true));
             this.txtState.Location = new System.Drawing.Point(191, 128);
             this.txtState.Margin = new System.Windows.Forms.Padding(3, 7, 3, 2);
             this.txtState.Name = "txtState";
@@ -154,6 +161,7 @@ namespace DisconectedEnviroment1
             // txtCode
             // 
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource, "ccode", true));
             this.txtCode.Location = new System.Drawing.Point(191, 8);
             this.txtCode.Margin = new System.Windows.Forms.Padding(3, 7, 3, 2);
             this.txtCode.Name = "txtCode";
@@ -164,6 +172,7 @@ namespace DisconectedEnviroment1
             // txtAddress
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource, "caddress", true));
             this.txtAddress.Location = new System.Drawing.Point(191, 88);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 7, 3, 2);
             this.txtAddress.Name = "txtAddress";
@@ -206,6 +215,7 @@ namespace DisconectedEnviroment1
             // txtCountry
             // 
             this.txtCountry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCountry.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource, "ccountry", true));
             this.txtCountry.Location = new System.Drawing.Point(191, 168);
             this.txtCountry.Margin = new System.Windows.Forms.Padding(3, 7, 3, 2);
             this.txtCountry.Name = "txtCountry";
@@ -226,7 +236,8 @@ namespace DisconectedEnviroment1
             // txtName
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Location = new System.Drawing.Point(191, 48);
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource, "cname", true));
+            this.txtName.Location = new System.Drawing.Point(191, 49);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 7, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(101, 22);
@@ -234,6 +245,7 @@ namespace DisconectedEnviroment1
             // 
             // cbDesignation
             // 
+            this.cbDesignation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource, "cDesignation", true));
             this.cbDesignation.FormattingEnabled = true;
             this.cbDesignation.Location = new System.Drawing.Point(191, 208);
             this.cbDesignation.Margin = new System.Windows.Forms.Padding(3, 7, 3, 2);
@@ -277,6 +289,7 @@ namespace DisconectedEnviroment1
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.BindingSource = this.empdetailsBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -389,6 +402,20 @@ namespace DisconectedEnviroment1
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
+            // hRDataSet
+            // 
+            this.hRDataSet.DataSetName = "HRDataSet";
+            this.hRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empdetailsBindingSource
+            // 
+            this.empdetailsBindingSource.DataMember = "empdetails";
+            this.empdetailsBindingSource.DataSource = this.hRDataSet;
+            // 
+            // empdetailsTableAdapter
+            // 
+            this.empdetailsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -400,12 +427,15 @@ namespace DisconectedEnviroment1
             this.Controls.Add(this.cmdSave);
             this.Controls.Add(this.cmdAdd);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Employe Details";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hRDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empdetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,6 +473,9 @@ namespace DisconectedEnviroment1
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private HRDataSet hRDataSet;
+        private System.Windows.Forms.BindingSource empdetailsBindingSource;
+        private HRDataSetTableAdapters.empdetailsTableAdapter empdetailsTableAdapter;
     }
 }
 
