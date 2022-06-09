@@ -274,6 +274,7 @@ namespace DisconectedEnviroment1
             this.cmdSave.TabIndex = 12;
             this.cmdSave.Text = "Save";
             this.cmdSave.UseVisualStyleBackColor = false;
+            this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
             // 
             // cmdAdd
             // 

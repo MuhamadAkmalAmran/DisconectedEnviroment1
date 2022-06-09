@@ -83,5 +83,30 @@ namespace DisconectedEnviroment1
             cmdAdd.Enabled = false;
 
         }
+
+        private void cmdSave_Click(object sender, EventArgs e)
+        {
+            dt = hRDataSet.Tables["empdetails"];
+            dr = dt.NewRow();
+            dr[0] = txtCode.Text;
+            dr[1] = txtName.Text;
+            dr[2] = txtAddress.Text;
+            dr[3] = txtState.Text;
+            dr[4] = txtCountry.Text;
+            dr[5] = cbDesignation.SelectedItem;
+            dr[6] = cbDepartment.SelectedItem;
+            dt.Rows.Add(dr);
+            empdetailsTableAdapter.Update(hRDataSet);
+            txtCode.Text = System.Convert.ToString(dr[0]);
+            txtCode.Enabled = false;
+            txtName.Enabled = false;
+            txtAddress.Enabled = false;
+            txtCountry.Enabled = false;
+            cbDesignation.Enabled = false;
+            cbDepartment.Enabled = false;
+            this.empdetailsTableAdapter.Fill(this.hRDataSet.empdetails);
+            cmdAdd.Enabled = true;
+            cmdSave.Enabled = false;
+        }
     }
 }
