@@ -285,6 +285,7 @@ namespace DisconectedEnviroment1
             this.cmdAdd.TabIndex = 11;
             this.cmdAdd.Text = "Add";
             this.cmdAdd.UseVisualStyleBackColor = false;
+            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
             // 
             // bindingNavigator1
             // 

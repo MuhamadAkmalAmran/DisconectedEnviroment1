@@ -29,7 +29,7 @@ namespace DisconectedEnviroment1
             //This line of code loads data into the
             //hRDataSet.empdetail table. This would appear in
             //Form1 Load event
-
+            this.empdetailsTableAdapter.Fill(this.hRDataSet.empdetails);
             txtCode.Enabled = false;
             txtName.Enabled = false;
             txtAddress.Enabled = false;
@@ -44,6 +44,42 @@ namespace DisconectedEnviroment1
             cbDepartment.Items.Add("FINANCE");
             cbDepartment.Items.Add("IDD");
             cmdSave.Enabled = false;
+        }
+
+        private void cmdAdd_Click(object sender, EventArgs e)
+        {
+            cmdSave.Enabled = true;
+            txtName.Enabled = true;
+            txtAddress.Enabled = true;
+            txtState.Enabled = true;
+            txtCountry.Enabled = true;
+            cbDesignation.Enabled = true;
+            cbDepartment.Enabled = true;
+            txtName.Text = "";
+            txtAddress.Text = "";
+            txtState.Text = "";
+            txtCountry.Text = "";
+            cbDesignation.Text = "";
+            cbDepartment.Text = "";
+            int ctr, len;
+            string codeval;
+            dt = hRDataSet.Tables["empdtails"];
+            len = dt.Rows.Count - 1;
+            dr = dt.Rows[len];
+            code = dr["cccode"].ToString();
+            codeval = code.Substring(1, 3);
+            ctr = Convert.ToInt32(codeval);
+
+            if ((ctr >= 1) && (ctr <9))
+            {
+                ctr = ctr + 1;
+                txtCode.Text = "C0" + ctr;
+            }
+            else if (ctr >= 99)
+            {
+                ctr = ctr + 1;
+            }
+
         }
     }
 }
